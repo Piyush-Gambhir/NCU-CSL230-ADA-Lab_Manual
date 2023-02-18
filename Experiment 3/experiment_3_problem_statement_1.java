@@ -10,6 +10,11 @@ import java.util.Scanner;
 public class experiment_3_problem_statement_1 {
 
     // Recursive merge sort function to sort the array
+
+    /*
+     * Time Complexity: O(nlogn)
+     * Space Complexity: O(n) - Recusrive Stack Space
+     */
     private static void recursiveMergeSort(int[] arr, int start, int end) {
         if (start < end) {
             int mid = (start + end) / 2;
@@ -21,25 +26,6 @@ public class experiment_3_problem_statement_1 {
 
     public static void recursiveMegreSort(int[] arr) {
         recursiveMergeSort(arr, 0, arr.length - 1);
-    }
-
-    // Iterative merge sort function
-    private static void iterativeMergeSort(int[] arr, int start, int end) {
-        int n = end - start + 1;
-        int currentSize;
-        int leftStart;
-
-        for (currentSize = 1; currentSize <= n - 1; currentSize = 2 * currentSize) {
-            for (leftStart = 0; leftStart < n - 1; leftStart += 2 * currentSize) {
-                int mid = Math.min(leftStart + currentSize - 1, n - 1);
-                int rightEnd = Math.min(leftStart + 2 * currentSize - 1, n - 1);
-                merge(arr, leftStart, mid, rightEnd);
-            }
-        }
-    }
-
-    public static void iterativeMegreSort(int[] arr) {
-        iterativeMergeSort(arr, 0, arr.length - 1);
     }
 
     // merge function to merge two subarrays
@@ -101,8 +87,7 @@ public class experiment_3_problem_statement_1 {
         }
         System.out.println();
 
-        // recursiveMegreSort(arr);
-        iterativeMegreSort(arr);
+        recursiveMegreSort(arr);
 
         System.out.print("Sorted Array is: ");
         for (int i = 0; i < n; i++) {

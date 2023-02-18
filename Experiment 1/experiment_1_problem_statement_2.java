@@ -9,6 +9,29 @@ import java.util.Scanner;
  */
 public class experiment_1_problem_statement_2 {
 
+    // Iterative function to calculate the Fibonacci of a number
+
+    /*
+     * Time Complexity: O(n) - Linear Time - Number of iterations
+     * Space Complexity: O(1) - Constant Space - No extra space is used
+     */
+
+    public static int iterativeFibonacci(int n) {
+        int a = 0, b = 1, c = 0;
+        if (n == 0) {
+            return a;
+        } else if (n == 1) {
+            return b;
+        } else {
+            for (int i = 2; i <= n; i++) {
+                c = a + b;
+                a = b;
+                b = c;
+            }
+            return c;
+        }
+    }
+
     // Recursive function to calculate the Fibonacci of a number
 
     /*
@@ -25,40 +48,12 @@ public class experiment_1_problem_statement_2 {
         }
     }
 
-    // Optimized Recursive function to calculate the Fibonacci of a number
-
-    /*
-     * Time Complexity: O(n) - Linear Time - Number of recursive calls
-     * Space Complexity: O(n) - Recusive Stack Space to store the recursive calls +
-     * Array to store the values
-     */
-    private static int optimizedRecursiveFibonacci(int n, int[] temp) {
-        if (n == 0) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
-        } else if (temp[n] != -1) {
-            return temp[n];
-        } else {
-            temp[n] = optimizedRecursiveFibonacci(n - 1, temp) + optimizedRecursiveFibonacci(n - 2, temp);
-            return temp[n];
-        }
-    }
-
-    public static int optimizedRecursiveFibonacci(int n) {
-        int[] temp = new int[n + 1];
-        for (int i = 0; i < temp.length; i++) {
-            temp[i] = -1;
-        }
-        return optimizedRecursiveFibonacci(n, temp);
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int n = sc.nextInt();
 
         System.out.println("Fibonacci(Recursive) of " + n + " is " + recursiveFibonacci(n) + ".");
-        System.out.println("Fibonacci(Optimized Recursive) of " + n + " is " + optimizedRecursiveFibonacci(n) + ".");
+        System.out.println("Fibonacci(Iterative) of " + n + " is " + iterativeFibonacci(n) + ".");
     }
 }

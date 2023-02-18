@@ -10,6 +10,11 @@ import java.util.Scanner;
 public class experiment_3_problem_statement_2 {
 
     // Recursive quick sort function to sort the array
+
+    /*
+     * Time Complexity: O(n^2) 
+     * Space Complexity: O(n) - Recusrive Stack Space
+     */
     private static void recursiveQuickSort(int[] arr, int start, int end) {
         if (start < end) {
             int pivot = partition(arr, start, end);
@@ -20,35 +25,6 @@ public class experiment_3_problem_statement_2 {
 
     public static void recursiveQuickSort(int[] arr) {
         recursiveQuickSort(arr, 0, arr.length - 1);
-    }
-
-    // Iterative quick sort function to sort the array
-    private static void iterativeQuickSort(int[] arr, int start, int end) {
-        int[] stack = new int[end - start + 1];
-        int top = -1;
-        stack[++top] = start;
-        stack[++top] = end;
-
-        while (top >= 0) {
-            end = stack[top--];
-            start = stack[top--];
-
-            int pivot = partition(arr, start, end);
-
-            if (pivot - 1 > start) {
-                stack[++top] = start;
-                stack[++top] = pivot - 1;
-            }
-
-            if (pivot + 1 < end) {
-                stack[++top] = pivot + 1;
-                stack[++top] = end;
-            }
-        }
-    }
-
-    public static void iterativeQuickSort(int[] arr) {
-        iterativeQuickSort(arr, 0, arr.length - 1);
     }
 
     // partition function to partition the array
@@ -89,7 +65,6 @@ public class experiment_3_problem_statement_2 {
         System.out.println();
 
         recursiveQuickSort(arr);
-        // iterativeQuickSort(arr);
 
         System.out.print("Sorted Array is: ");
         for (int i = 0; i < n; i++) {
