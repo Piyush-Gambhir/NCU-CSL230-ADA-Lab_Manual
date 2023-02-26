@@ -9,9 +9,9 @@ Given a set of n items, each with a weight w_i and a value v_i, and a knapsack w
 import java.util.Scanner;
 
 /**
- * experiment_8_problem_statement
+ * experiment_7_problem_statement
  */
-public class experiment_8_problem_statement {
+public class experiment_7_problem_statement {
 
     // Function to find the maximum value that can be put in a knapsack of capacity
     // capacity
