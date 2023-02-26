@@ -108,7 +108,7 @@ public class experiment_4_problem_statement {
         // Dividing the matrix b into 4 halves
         for (int i = 0; i < matrix2.length / 2; i++) {
             for (int j = 0; j < matrix2.length / 2; j++) {
-                b11[i][j] = matrix2[i][j];
+                b11[i][j] = matrix2[i][j];  
                 b12[i][j] = matrix2[i][j + matrix2.length / 2];
                 b21[i][j] = matrix2[i + matrix2.length / 2][j];
                 b22[i][j] = matrix2[i + matrix2.length / 2][j + matrix2.length / 2];
