@@ -6,16 +6,15 @@ Given n cities, a salesperson starts at a specified city (source), visit all n-1
 */
 
 /**
- * practical_8_problem_statement
+ * experiment_8_problem_statement
  */
-public class practical_8_problem_statement {
+public class experiment_8_problem_statement {
 
     public static void travelingSalesman() {
-        
+
     }
 
     public static void main(String[] args) {
 
-        
     }
 }

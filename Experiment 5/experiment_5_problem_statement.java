@@ -49,7 +49,7 @@ public class experiment_5_problem_statement {
         int[] weight = { 10, 40, 20, 30 };
         int[] profit = { 60, 40, 100, 120 };
         int maxWeight = 50;
-    
+
         fractionalKnapsackAlgorithm(weight, profit, maxWeight);
     }
 }
